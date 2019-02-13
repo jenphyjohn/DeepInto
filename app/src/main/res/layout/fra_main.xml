@@ -16,35 +16,22 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/second_floor"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:contentDescription="@string/app_name"
-                android:scaleType="centerCrop"
-                android:src="@drawable/image_second_floor" />
 
-            <ImageView
-                android:id="@+id/second_floor_content"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:alpha="0"
-                android:contentDescription="@string/app_name"
-                android:scaleType="centerCrop"
-                android:src="@drawable/image_second_floor_content" />
+            <include layout="@layout/fra_main_two_floor_include" />
 
             <com.mincat.sample.refresh.layout.header.ClassicsHeader
                 android:id="@+id/classics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="?attr/actionBarSize" />
+
+
         </com.mincat.sample.refresh.layout.header.TwoLevelHeader>
 
         <ScrollView
             android:id="@+id/scrollView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:scrollbars="none"
             android:overScrollMode="never">
 
             <FrameLayout
@@ -58,23 +45,33 @@
             </FrameLayout>
         </ScrollView>
 
-       <!-- <com.mincat.sample.refresh.layout.footer.ClassicsFooter
+        <com.mincat.sample.refresh.layout.footer.ClassicsFooter
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:srlPrimaryColor="@android:color/white" />-->
+            app:srlPrimaryColor="@android:color/white" />
     </com.mincat.sample.refresh.SmartRefreshLayout>
 
 
     <!--title Bar-->
     <RelativeLayout
+        android:id="@+id/rl_title_bar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="top">
 
         <RelativeLayout
+            android:id="@+id/status_bar"
+            android:layout_width="match_parent"
+            android:visibility="visible"
+            android:background="@color/main_orange"
+            android:layout_height="22dp">
+        </RelativeLayout>
+
+        <RelativeLayout
             android:id="@+id/rl_title"
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_31"
+            android:layout_below="@id/status_bar"
             android:background="@color/main_orange">
 
 

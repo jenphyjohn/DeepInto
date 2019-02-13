@@ -214,13 +214,6 @@ public abstract class BasePostFragmentAct extends FragmentActivity implements In
         }
     }
 
-    /**
-     * 设置 statusBar字体颜色值为黑色
-     */
-    protected void setBarTitleBlack() {
-        // 设置Status字体颜色值
-        StatusBarUtil.setStatusTextColor(true, this);
-    }
     // 获View 上的文本
     protected String etString(EditText et) {
 

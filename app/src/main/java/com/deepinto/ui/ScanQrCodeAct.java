@@ -33,6 +33,7 @@ import com.deepinto.scan.camera.CameraManager;
 import com.deepinto.scan.decode.MainHandler;
 import com.deepinto.scan.utils.BeepManager;
 import com.mincat.sample.manager.BasePostFragmentAct;
+import com.mincat.sample.utils.HiddenStatusBar;
 import com.mincat.sample.utils.StatusBarUtil;
 
 import java.io.IOException;
@@ -74,22 +75,24 @@ public class ScanQrCodeAct extends BasePostFragmentAct implements SurfaceHolder.
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // 设置StatusBar背景为透明色
-        if (Build.VERSION.SDK_INT > 22) {
-            Window window = getWindow();
-            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
-            window.setStatusBarColor(Color.parseColor("#00000000"));
-        } else {
-            getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-        }
+        HiddenStatusBar.hiddenStatusBarAct(this);
 
-        // 将整个界面上移22个dp值
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            findViewById(android.R.id.content).setSystemUiVisibility(
-                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
-        }
-        // 设置Status字体颜色值
-        StatusBarUtil.setStatusTextColor(false, this);
+//        // 设置StatusBar背景为透明色
+//        if (Build.VERSION.SDK_INT > 22) {
+//            Window window = getWindow();
+//            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+//            window.setStatusBarColor(Color.parseColor("#00000000"));
+//        } else {
+//            getWindow().setFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS, WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+//        }
+//
+//        // 将整个界面上移22个dp值
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+//            findViewById(android.R.id.content).setSystemUiVisibility(
+//                    View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
+//        }
+//        // 设置Status字体颜色值
+////        StatusBarUtil.setStatusTextColor(false, this);
         setContentView(R.layout.act_sacn_qr_code);
 
         initView();

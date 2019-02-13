@@ -27,7 +27,6 @@ import java.util.Map;
 
 /**
  * 球脉冲底部加载组件
- * Created by SCWANG on 2017/5/30.
  */
 public class BallPulseFooter extends InternalAbstract implements RefreshFooter {
 

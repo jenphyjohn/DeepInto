@@ -31,7 +31,7 @@ public abstract class BaseVolleyPost extends BaseVolleyRequest implements Volley
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setBarColorOrange();
+//        setBarColorOrange();
     }
 
 

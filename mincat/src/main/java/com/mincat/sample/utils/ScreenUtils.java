@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
 
 /**
@@ -13,8 +14,7 @@ import android.view.WindowManager;
  */
 
 public class ScreenUtils {
-    private ScreenUtils()
-    {
+    private ScreenUtils() {
         /* cannot be instantiated */
         throw new UnsupportedOperationException("cannot be instantiated");
     }
@@ -25,8 +25,7 @@ public class ScreenUtils {
      * @param context
      * @return
      */
-    public static int getScreenWidth(Context context)
-    {
+    public static int getScreenWidth(Context context) {
         WindowManager wm = (WindowManager) context
                 .getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics outMetrics = new DisplayMetrics();
@@ -40,8 +39,7 @@ public class ScreenUtils {
      * @param context
      * @return
      */
-    public static int getScreenHeight(Context context)
-    {
+    public static int getScreenHeight(Context context) {
         WindowManager wm = (WindowManager) context
                 .getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics outMetrics = new DisplayMetrics();
@@ -55,19 +53,16 @@ public class ScreenUtils {
      * @param context
      * @return
      */
-    public static int getStatusHeight(Context context)
-    {
+    public static int getStatusHeight(Context context) {
 
         int statusHeight = -1;
-        try
-        {
+        try {
             Class<?> clazz = Class.forName("com.android.internal.R$dimen");
             Object object = clazz.newInstance();
             int height = Integer.parseInt(clazz.getField("status_bar_height")
                     .get(object).toString());
             statusHeight = context.getResources().getDimensionPixelSize(height);
-        } catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return statusHeight;
@@ -79,8 +74,7 @@ public class ScreenUtils {
      * @param activity
      * @return
      */
-    public static Bitmap snapShotWithStatusBar(Activity activity)
-    {
+    public static Bitmap snapShotWithStatusBar(Activity activity) {
         View view = activity.getWindow().getDecorView();
         view.setDrawingCacheEnabled(true);
         view.buildDrawingCache();
@@ -100,8 +94,7 @@ public class ScreenUtils {
      * @param activity
      * @return
      */
-    public static Bitmap snapShotWithoutStatusBar(Activity activity)
-    {
+    public static Bitmap snapShotWithoutStatusBar(Activity activity) {
         View view = activity.getWindow().getDecorView();
         view.setDrawingCacheEnabled(true);
         view.buildDrawingCache();
@@ -119,4 +112,14 @@ public class ScreenUtils {
         return bp;
 
     }
+
+
+    public static void setMargins(View v, int l, int t, int r, int b) {
+        if (v.getLayoutParams() instanceof ViewGroup.MarginLayoutParams) {
+            ViewGroup.MarginLayoutParams p = (ViewGroup.MarginLayoutParams) v.getLayoutParams();
+            p.setMargins(l, t, r, b);
+            v.requestLayout();
+        }
+    }
+
 }

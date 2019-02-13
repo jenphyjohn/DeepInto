@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
-
 import com.mincat.sample.R;
 import com.mincat.sample.refresh.layout.api.OnTwoLevelListener;
 import com.mincat.sample.refresh.layout.api.RefreshHeader;
@@ -39,7 +38,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
     protected boolean mEnablePullToCloseTwoLevel = true;
     protected int mFloorDuration = 1000;
     protected int mHeaderHeight;
-//    protected int mPaintAlpha;
+    //    protected int mPaintAlpha;
 //    protected Paint mPaint;
     protected RefreshInternal mRefreshHeader;
     protected RefreshKernel mRefreshKernel;
@@ -224,7 +223,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
                 case Translate:
                     refreshHeader.getView().setTranslationY(spinner);
                     break;
-                case Scale:{
+                case Scale: {
                     View view = refreshHeader.getView();
                     view.layout(view.getLeft(), view.getTop(), view.getRight(), view.getTop() + Math.max(0, spinner));
                     break;
@@ -238,6 +237,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
 
     /**
      * 设置指定的 Header
+     *
      * @param header RefreshHeader
      * @return TwoLevelHeader
      */
@@ -247,8 +247,9 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
 
     /**
      * 设置指定的 Header
+     *
      * @param header RefreshHeader
-     * @param width 指定宽度
+     * @param width  指定宽度
      * @param height 指定高度
      * @return TwoLevelHeader
      */
@@ -273,6 +274,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
 
     /**
      * 设置下拉 Header 的最大高度比值
+     *
      * @param rate MaxDragHeight/HeaderHeight
      * @return TwoLevelHeader
      */
@@ -290,6 +292,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
 
     /**
      * 是否禁止在二极状态是上滑关闭状态回到初态
+     *
      * @param enabled 是否启用
      * @return TwoLevelHeader
      */
@@ -305,6 +308,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
 
     /**
      * 设置触发二楼的白百分比
+     *
      * @param rate 比率 要求大于 RefreshRage
      * @return TwoLevelHeader
      */
@@ -315,6 +319,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
 
     /**
      * 设置触发刷新的百分比
+     *
      * @param rate 比率 要求小于 FloorRage
      * @return TwoLevelHeader
      */
@@ -325,6 +330,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
 
     /**
      * 设置是否开启二级刷新
+     *
      * @param enabled 是否开启
      * @return TwoLevelHeader
      */
@@ -335,6 +341,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
 
     /**
      * 设置二楼展开动画持续的时间
+     *
      * @param duration 毫秒
      * @return TwoLevelHeader
      */
@@ -345,6 +352,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
 
     /**
      * 设置二级刷新监听器
+     *
      * @param listener 监听器
      * @return TwoLevelHeader
      */
@@ -355,6 +363,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
 
     /**
      * 结束二级刷新
+     *
      * @return TwoLevelHeader
      */
     public TwoLevelHeader finishTwoLevel() {
@@ -368,6 +377,7 @@ public class TwoLevelHeader extends InternalAbstract implements RefreshHeader/*,
     /**
      * Open the second floor voluntarily
      * 主动打开二楼
+     *
      * @param widthOnTwoLevelListener 是否触发 OnTwoLevelListener 监听器
      * @return TwoLevelHeader
      */

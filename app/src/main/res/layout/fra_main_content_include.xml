@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/white">
+    android:layout_height="match_parent">
 
 
     <RelativeLayout
@@ -29,6 +28,10 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/dp_140"
             android:layout_below="@id/rl_image_content"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10"
+            android:layout_marginTop="@dimen/dp_5"
+            android:background="@drawable/corners_bg_white"
             android:orientation="vertical">
 
             <LinearLayout
@@ -185,8 +188,9 @@
 
         <!--头条-->
         <RelativeLayout
+            android:id="@+id/rl_contain_hot"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_200"
+            android:layout_height="wrap_content"
             android:layout_below="@id/linear_icon_contain"
             android:layout_margin="@dimen/dp_10"
             android:background="@drawable/corners_bg_white">
@@ -224,8 +228,9 @@
                 android:layout_below="@id/linear_message_title" />
 
             <LinearLayout
+                android:id="@+id/linear_miao"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/dp_100"
+                android:layout_height="@dimen/dp_120"
                 android:layout_below="@id/view_line_h_01"
                 android:orientation="horizontal">
 
@@ -233,27 +238,38 @@
 
 
                     <RelativeLayout
+                        android:id="@+id/rl_miao"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_40">
 
+
+                        <!-- <android.support.v7.widget.AppCompatImageView
+
+                          android:layout_width="@dimen/dp_25"
+                          android:layout_height="@dimen/dp_25"
+                          android:layout_alignParentBottom="true"
+                          android:layout_marginLeft="@dimen/dp_10"
+                          android:background="@drawable/icon_clock" />-->
+
                         <TextView
-                            android:id="@+id/tv_time_shopping_title"
+                            android:id="@+id/image_time_shopping"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="@dimen/dp_10"
-                            android:text="抢购"
+                            android:layout_alignParentBottom="true"
                             android:layout_centerVertical="true"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:text="限时秒杀"
                             android:textColor="@color/main_text_color"
-                            android:textSize="@dimen/sp_15"
+                            android:textSize="@dimen/sp_14"
                             android:textStyle="bold" />
 
                         <LinearLayout
-                            android:layout_centerVertical="true"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="@dimen/dp_25"
+                            android:layout_alignParentBottom="true"
                             android:layout_marginLeft="@dimen/dp_5"
                             android:layout_marginTop="@dimen/dp_10"
-                            android:layout_toRightOf="@id/tv_time_shopping_title"
+                            android:layout_toRightOf="@id/image_time_shopping"
                             android:gravity="center_vertical">
 
 
@@ -281,18 +297,92 @@
                                     android:text="00" />
                             </LinearLayout>
                         </LinearLayout>
+
+
                     </RelativeLayout>
 
+                    <android.support.v7.widget.AppCompatImageView
+                        android:id="@+id/image_t"
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="@dimen/dp_60"
+                        android:layout_below="@id/rl_miao"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:background="@drawable/image_t" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/rl_miao"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:layout_toRightOf="@id/image_t"
+                        android:text="球衣限时折扣"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/sp_12" />
 
                 </RelativeLayout>
+
+                <View
+                    style="@style/view_line_v_0_5"
+                    android:layout_below="@id/linear_miao" />
 
                 <RelativeLayout style="@style/rl_style_weight_h_1">
 
-                </RelativeLayout>
+                    <TextView
+                        android:id="@+id/tv_goods"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:text="有好货"
+                        android:textColor="@color/main_text_color"
+                        android:textSize="@dimen/sp_14"
+                        android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/tv_goods"
+                        android:layout_marginLeft="@dimen/dp_10"
+                        android:layout_marginTop="@dimen/dp_10"
+                        android:text="只给挑剔的你"
+                        android:textColor="@color/gray"
+                        android:textSize="@dimen/sp_12" />
+
+                    <android.support.v7.widget.AppCompatImageView
+                        android:layout_width="@dimen/dp_60"
+                        android:layout_height="@dimen/dp_60"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginBottom="@dimen/dp_10"
+                        android:layout_marginRight="@dimen/dp_10"
+                        android:background="@drawable/height_shoes" />
+
+
+                </RelativeLayout>
 
             </LinearLayout>
 
+            <View
+                style="@style/view_line_h_0_5"
+                android:layout_below="@id/linear_miao" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rl_contain_hot"
+            android:layout_marginBottom="@dimen/dp_10"
+            android:layout_marginLeft="@dimen/dp_10"
+            android:layout_marginRight="@dimen/dp_10">
+
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </RelativeLayout>
 

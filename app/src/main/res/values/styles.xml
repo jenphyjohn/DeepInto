@@ -85,8 +85,8 @@
     </style>
 
     <style name="fra_main_rl_icon_circle">
-        <item name="android:layout_width">@dimen/dp_50</item>
-        <item name="android:layout_height">@dimen/dp_50</item>
+        <item name="android:layout_width">@dimen/dp_40</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
         <item name="android:layout_centerInParent">true</item>
     </style>
 
@@ -102,6 +102,11 @@
     <style name="view_line_h_0_5">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/dp_0_5</item>
+        <item name="android:background">@color/gray_shallow</item>
+    </style>
+    <style name="view_line_v_0_5">
+        <item name="android:layout_width">@dimen/dp_0_5</item>
+        <item name="android:layout_height">match_parent</item>
         <item name="android:background">@color/gray_shallow</item>
     </style>
 
