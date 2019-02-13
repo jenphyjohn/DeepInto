@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_register_title"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_44">
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:id="@+id/icon_close_act"
+            android:layout_width="@dimen/dp_20"
+            android:layout_height="@dimen/dp_20"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp_15"
+            android:background="@drawable/icon_back_black" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="注册"
+            android:textColor="@color/main_text_color"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_15"
+            android:text="帮助" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_country_info"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_30"
+        android:layout_below="@id/rl_register_title"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:text="国家地区"
+            android:textColor="@color/main_text_color" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="@dimen/dp_15"
+            android:text="@string/_86"
+            android:textColor="@color/main_text_color" />
+
+        <android.support.v7.widget.AppCompatImageButton
+            android:layout_width="@dimen/dp_5"
+            android:layout_height="@dimen/dp_10"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/arrow" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl_register_et"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/dp_185"
+        android:layout_below="@id/rl_country_info"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15">
+
+        <RelativeLayout
+
+            android:id="@+id/rl_et_register"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60">
+
+            <EditText
+                android:id="@+id/et_mobile"
+                style="@style/register_mobile_et"
+                android:hint="请输入手机号码" />
+
+            <View style="@style/register_et_blow_line" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_get_verify_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:layout_below="@id/rl_et_register">
+
+            <EditText
+                android:id="@+id/et_verify_code"
+                style="@style/register_mobile_et"
+                android:hint="请输入验证码" />
+
+            <Button
+                android:id="@+id/btn_get_verify_code"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dp_35"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/corners_verify_btn"
+                android:padding="@dimen/dp_3"
+                android:text="获取验证码"
+                android:textColor="@color/main_orange"
+                android:textSize="@dimen/sp_12" />
+
+            <View style="@style/register_et_blow_line" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_60"
+            android:layout_below="@id/rl_get_verify_code">
+
+            <EditText
+                android:id="@+id/et_password"
+                style="@style/register_mobile_et"
+                android:hint="请输入密码"
+                android:inputType="textPassword" />
+
+
+            <View style="@style/register_et_blow_line" />
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/rl_register_et"
+        android:layout_marginLeft="@dimen/dp_15"
+        android:layout_marginRight="@dimen/dp_15"
+        android:layout_marginTop="@dimen/dp_25">
+
+        <Button
+            android:id="@+id/btn_register_user"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_40"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/corners_login_btn"
+            android:text="同意协议并注册"
+            android:textColor="@color/white"
+            android:textSize="@dimen/sp_16" />
+
+        <TextView
+            android:id="@+id/tv_protocol"
+            style="@style/login_tv"
+            android:layout_below="@id/btn_register_user"
+            android:text="已阅读并同意协议"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/sp_12" />
+
+        <TextView
+            style="@style/login_tv"
+            android:layout_below="@id/tv_protocol"
+            android:layout_marginTop="@dimen/dp_0"
+            android:text="七宝商城平台服务协议、隐私权政策、法律声明"
+            android:textSize="@dimen/sp_12" />
+    </RelativeLayout>
+
+</RelativeLayout>

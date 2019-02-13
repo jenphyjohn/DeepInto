@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/gray_shallow">
+
+        <!--占位图-->
+        <RelativeLayout
+            android:id="@+id/rl_image_content"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_140">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/banner_01" />
+
+        </RelativeLayout>
+
+        <!--图标-->
+        <LinearLayout
+            android:id="@+id/linear_icon_contain"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_140"
+            android:layout_below="@id/rl_image_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:layout_marginTop="@dimen/dp_10">
+
+                <RelativeLayout
+                    style="@style/fra_main_rl_icon_circle_contain"
+                    android:layout_weight="1">
+
+
+                    <RelativeLayout
+                        style="@style/fra_main_rl_icon_circle"
+                        android:background="@drawable/corners_circle_red">
+
+                        <TextView
+                            style="@style/fra_main_rl_icon_circle_tv"
+                            android:text="七猫" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/fra_main_rl_icon_circle_contain"
+                    android:layout_weight="1">
+
+
+                    <RelativeLayout
+                        style="@style/fra_main_rl_icon_circle"
+                        android:background="@drawable/corners_circle_orange">
+
+                        <TextView
+                            style="@style/fra_main_rl_icon_circle_tv"
+                            android:text="划算" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/fra_main_rl_icon_circle_contain"
+                    android:layout_weight="1">
+
+                    <RelativeLayout
+                        style="@style/fra_main_rl_icon_circle"
+                        android:background="@drawable/corners_circle_yellow">
+
+                        <TextView
+                            style="@style/fra_main_rl_icon_circle_tv"
+                            android:text="国际" />
+
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/fra_main_rl_icon_circle_contain"
+                    android:layout_weight="1">
+
+
+                    <RelativeLayout
+                        style="@style/fra_main_rl_icon_circle"
+                        android:background="@drawable/corners_circle_green">
+
+                        <TextView
+                            style="@style/fra_main_rl_icon_circle_tv"
+                            android:text="外卖" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_60"
+                android:layout_marginTop="@dimen/dp_10">
+
+                <RelativeLayout
+                    style="@style/fra_main_rl_icon_circle_contain"
+                    android:layout_weight="1">
+
+
+                    <RelativeLayout
+                        style="@style/fra_main_rl_icon_circle"
+                        android:background="@drawable/corners_circle_young">
+
+                        <TextView
+                            style="@style/fra_main_rl_icon_circle_tv"
+                            android:text="超市" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/fra_main_rl_icon_circle_contain"
+                    android:layout_weight="1">
+
+
+                    <RelativeLayout
+                        style="@style/fra_main_rl_icon_circle"
+                        android:background="@drawable/corners_circle_blue">
+
+                        <TextView
+                            style="@style/fra_main_rl_icon_circle_tv"
+                            android:text="充值" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/fra_main_rl_icon_circle_contain"
+                    android:layout_weight="1">
+
+
+                    <RelativeLayout
+                        style="@style/fra_main_rl_icon_circle"
+                        android:background="@drawable/corners_circle_violet">
+
+                        <TextView
+                            style="@style/fra_main_rl_icon_circle_tv"
+                            android:text="旅行" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    style="@style/fra_main_rl_icon_circle_contain"
+                    android:layout_weight="1"
+                    android:visibility="visible">
+
+
+                    <RelativeLayout
+                        style="@style/fra_main_rl_icon_circle"
+                        android:background="@drawable/corners_circle_main">
+
+                        <TextView
+                            style="@style/fra_main_rl_icon_circle_tv"
+                            android:text="健康" />
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--头条-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dp_200"
+            android:layout_below="@id/linear_icon_contain"
+            android:layout_margin="@dimen/dp_10"
+            android:background="@drawable/corners_bg_white">
+
+            <LinearLayout
+                android:id="@+id/linear_message_title"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_30"
+                android:layout_margin="@dimen/dp_10"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="七宝头条"
+                    android:textColor="@color/md_orange_800"
+                    android:textSize="@dimen/sp_16"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/dp_15"
+                    android:text="nike 官方旗舰店5折起,原因竟然是..."
+                    android:textColor="@color/main_text_color"
+                    android:textSize="@dimen/sp_12" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_line_h_01"
+                style="@style/view_line_h_0_5"
+                android:layout_below="@id/linear_message_title" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/dp_100"
+                android:layout_below="@id/view_line_h_01"
+                android:orientation="horizontal">
+
+                <RelativeLayout style="@style/rl_style_weight_h_1">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/dp_40">
+
+                        <TextView
+                            android:id="@+id/tv_time_shopping_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_10"
+                            android:text="抢购"
+                            android:layout_centerVertical="true"
+                            android:textColor="@color/main_text_color"
+                            android:textSize="@dimen/sp_15"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_centerVertical="true"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/dp_5"
+                            android:layout_marginTop="@dimen/dp_10"
+                            android:layout_toRightOf="@id/tv_time_shopping_title"
+                            android:gravity="center_vertical">
+
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_miao_sha_shi"
+                                    style="@style/tv_miao_sha"
+                                    android:text="00" />
+
+                                <TextView style="@style/tv_miao_sha_mao" />
+
+                                <TextView
+                                    android:id="@+id/tv_miao_sha_minter"
+                                    style="@style/tv_miao_sha"
+                                    android:text="00" />
+
+                                <TextView style="@style/tv_miao_sha_mao" />
+
+                                <TextView
+                                    android:id="@+id/tv_miao_sha_second"
+                                    style="@style/tv_miao_sha"
+                                    android:text="00" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout style="@style/rl_style_weight_h_1">
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

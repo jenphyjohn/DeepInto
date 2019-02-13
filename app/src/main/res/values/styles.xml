@@ -1,0 +1,130 @@
+<resources>
+
+    <item name="decode" type="id" />
+    <item name="decode_failed" type="id" />
+    <item name="decode_succeeded" type="id" />
+    <item name="quit" type="id" />
+    <item name="restart_preview" type="id" />
+    <item name="return_scan_result" type="id" />
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="login_et_blow_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_0_5</item>
+        <item name="android:background">@color/main_orange</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="login_et">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:layout_marginLeft">@dimen/dp_20</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginBottom">@dimen/dp_5</item>
+        <item name="android:textCursorDrawable">@drawable/et_cursor</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="login_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/main_text_color</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:layout_marginTop">@dimen/dp_20</item>
+    </style>
+
+
+    <style name="register_mobile_et">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_40</item>
+        <item name="android:background">@null</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_marginBottom">@dimen/dp_5</item>
+        <item name="android:textCursorDrawable">@drawable/et_cursor</item>
+        <item name="android:textSize">@dimen/sp_14</item>
+        <item name="android:gravity">bottom</item>
+    </style>
+
+    <style name="register_et_blow_line">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_0_5</item>
+        <item name="android:background">@color/main_orange</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="fra_main_title_rl_sign">
+        <item name="android:layout_width">@dimen/dp_65</item>
+        <item name="android:layout_height">@dimen/dp_20</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_marginLeft">@dimen/dp_5</item>
+        <item name="android:background">@drawable/corners_transparent</item>
+    </style>
+
+    <style name="fra_main_title_rl_sign_text">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+    </style>
+
+    <!---->
+    <style name="fra_main_rl_icon_circle_contain">
+        <item name="android:layout_width">@dimen/dp_0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="fra_main_rl_icon_circle">
+        <item name="android:layout_width">@dimen/dp_50</item>
+        <item name="android:layout_height">@dimen/dp_50</item>
+        <item name="android:layout_centerInParent">true</item>
+    </style>
+
+    <style name="fra_main_rl_icon_circle_tv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerInParent">true</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_12</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="view_line_h_0_5">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/dp_0_5</item>
+        <item name="android:background">@color/gray_shallow</item>
+    </style>
+
+    <style name="rl_style_weight_h_1">
+        <item name="android:layout_width">@dimen/dp_0</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+
+    <style name="tv_miao_sha">
+        <item name="android:layout_width">@dimen/dp_20</item>
+        <item name="android:layout_height">@dimen/dp_20</item>
+        <item name="android:background">@drawable/corners_bg_miao_sha</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/sp_10</item>
+    </style>
+    <style name="tv_miao_sha_mao">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:text">:</item>
+        <item name="android:padding">@dimen/dp_3</item>
+    </style>
+
+</resources>
