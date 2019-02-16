@@ -13,12 +13,12 @@
         <RelativeLayout
             android:id="@+id/rl_image_content"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/dp_140">
+            android:layout_height="wrap_content">
 
             <android.support.v7.widget.AppCompatImageView
+                android:id="@+id/banner_image"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/banner_01" />
+                android:layout_height="wrap_content" />
 
         </RelativeLayout>
 

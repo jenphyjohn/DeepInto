@@ -5,6 +5,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.AppCompatImageButton;
+import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
@@ -15,10 +16,16 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.android.volley.VolleyError;
+import com.bumptech.glide.Glide;
 import com.deepinto.R;
 import com.deepinto.adapter.FraMainListAdapter;
+import com.deepinto.entity.GetBannerImageInfo;
+import com.deepinto.entity.ImageInfo;
 import com.deepinto.ui.ScanQrCodeAct;
+import com.deepinto.utils.Constant;
 import com.mincat.sample.manager.BaseFragment;
 import com.mincat.sample.refresh.layout.api.OnTwoLevelListener;
 import com.mincat.sample.refresh.layout.api.RefreshFooter;
@@ -30,6 +37,8 @@ import com.mincat.sample.utils.HiddenStatusBar;
 import com.mincat.sample.utils.L;
 import com.mincat.sample.utils.TimeUtils;
 
+import java.util.List;
+
 /**
  * @author Ming
  * @Desc 首页
@@ -38,7 +47,6 @@ public class MainFra extends BaseFragment {
 
 
     private static final String SIGN_HEADER = "header";
-
     private static final String SING_FOOTER = "footer";
 
     private View view;
@@ -54,6 +62,8 @@ public class MainFra extends BaseFragment {
     private RelativeLayout mRlTitleBar;
     private ImageView mSecondFloor;
     private ImageButton mBtnCloseTwoFloor;
+    private JSONObject mJson;
+    private AppCompatImageView mBannerImage;
 
 
     Handler handler = new Handler() {
@@ -102,6 +112,8 @@ public class MainFra extends BaseFragment {
         floor = getId(R.id.second_floor, view);
         mRlTitleBar = getId(R.id.rl_title_bar, view);
         refreshLayout = getId(R.id.refreshLayout, view);
+
+        mBannerImage = getId(R.id.banner_image, view);
 
         refreshLayout.setOnMultiPurposeListener(new SimpleMultiPurposeListener() {
 
@@ -177,6 +189,9 @@ public class MainFra extends BaseFragment {
         });
 
 
+        onNetRequest();
+
+
     }
 
     /**
@@ -188,6 +203,22 @@ public class MainFra extends BaseFragment {
         mSecondFloor.animate().alpha(0).setDuration(1000);
     }
 
+
+    /**
+     *
+     */
+    private void onNetRequest() {
+
+        mJson = new JSONObject();
+
+        mJson.put("flag", "true");
+
+        String param = mJson.toJSONString();
+
+        executeVolleyPostRequest(getActivity(), Constant.GET_BANNER_IMAGE, param, Constant.BANNER_IMAGE, false);
+
+
+    }
 
     /**
      * 网络请求
@@ -257,14 +288,32 @@ public class MainFra extends BaseFragment {
 
     }
 
-    @Override// 网络请求,请求成功回调函数
-    public void onHandleResponse(String response, String sign) {
+
+    @Override
+    public void onHandleResponsePost(String response, String sign) {
+
+        if (sign.equals(Constant.BANNER_IMAGE)) {
+
+            GetBannerImageInfo getBannerImageInfo = JSONObject.parseObject(response, GetBannerImageInfo.class);
+
+            if (getBannerImageInfo.getCode().equals("1")) {
+
+                List<ImageInfo> list = getBannerImageInfo.getImageInfo();
+
+                for (ImageInfo info : list) {
+
+                    loadImage(getActivity(), info.getImage(), mBannerImage);
+
+
+                }
+            }
+
+        }
 
     }
 
-    @Override// 网络请求,请求失败回调函数
+    @Override
     public void errorListener(VolleyError error, String sign) {
 
     }
-
 }

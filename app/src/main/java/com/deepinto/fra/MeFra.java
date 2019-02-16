@@ -34,8 +34,9 @@ public class MeFra extends BaseFragment {
 
     }
 
+
     @Override
-    public void onHandleResponse(String response, String sign) {
+    public void onHandleResponsePost(String response, String sign) {
 
     }
 
