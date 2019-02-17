@@ -7,7 +7,7 @@ import android.support.annotation.Nullable;
 import android.view.View;
 
 import com.deepinto.R;
-import com.deepinto.ui.login.LoginAct;
+import com.deepinto.ui.mall.login.LoginAct;
 import com.mincat.sample.manager.base.AppCompat;
 import com.mincat.sample.utils.GetAppSha1;
 import com.mincat.sample.utils.L;
@@ -40,7 +40,7 @@ public class SplashAct extends AppCompat {
             @Override
             public void run() {
 
-                startActivity(new Intent(SplashAct.this, MainHomeAct.class));
+                startActivity(new Intent(SplashAct.this, LoginAct.class));
             }
         }, 3000);
     }

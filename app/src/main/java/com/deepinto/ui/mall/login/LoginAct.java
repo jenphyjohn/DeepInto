@@ -1,4 +1,4 @@
-package com.deepinto.ui.login;
+package com.deepinto.ui.mall.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,16 +7,22 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import com.alibaba.fastjson.JSONObject;
 import com.android.volley.VolleyError;
-import com.deepinto.Bean.BaseBean;
 import com.deepinto.R;
+import com.deepinto.entity.BaseBean;
+import com.deepinto.entity.mall.LoginEntity;
 import com.deepinto.ui.MainHomeAct;
-import com.deepinto.ui.SplashAct;
+import com.deepinto.ui.mall.register.RegisterAct;
 import com.deepinto.utils.Constant;
 import com.mincat.sample.manager.post.BaseVolleyPost;
+import com.mincat.sample.utils.FilterEtLength;
 import com.mincat.sample.utils.L;
+import com.mincat.sample.utils.MD5;
 import com.mincat.sample.utils.SpUtils;
 import com.mincat.sample.utils.T;
+
+import java.security.NoSuchAlgorithmException;
 
 /**
  * @author Ming
@@ -29,8 +35,8 @@ public class LoginAct extends BaseVolleyPost {
     private String textUserName;
     private String textPassWord;
     private Button mBtnLogin;
-    private com.alibaba.fastjson.JSONObject mLoginJs;
     private TextView mTvRegister;
+    private LoginEntity entity;
 
 
     @Override
@@ -42,6 +48,7 @@ public class LoginAct extends BaseVolleyPost {
 
     @Override
     public void initView() {
+        setBarColorOrange();
 
         mEtUserName = getId(R.id.et_username);
         mEtPassword = getId(R.id.et_password);
@@ -49,6 +56,9 @@ public class LoginAct extends BaseVolleyPost {
         mBtnLogin.setOnClickListener(this);
         mTvRegister = getId(R.id.tv_register);
         mTvRegister.setOnClickListener(this);
+
+        FilterEtLength.filter(mEtUserName, 11);
+        FilterEtLength.filter(mEtPassword, 12);
 
     }
 
@@ -89,13 +99,16 @@ public class LoginAct extends BaseVolleyPost {
 
         textUserName = etString(mEtUserName);
         textPassWord = etString(mEtPassword);
-        mLoginJs = new com.alibaba.fastjson.JSONObject();
 
-        mLoginJs.put("username", textUserName);
-        mLoginJs.put("password", textPassWord);
-        mLoginJs.put("from", "android");
+        try {
+            entity = new LoginEntity();
+            entity.setUsername(textUserName);
+            entity.setPassword(MD5.getMd5(textPassWord));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
 
-        String mLoginParam = mLoginJs.toJSONString();
+        String mLoginParam = JSONObject.toJSONString(entity);
 
         executeVolleyPostRequest(this, Constant.LOGIN_URL, mLoginParam, Constant.LOGIN_SIGN, false);
 
@@ -108,7 +121,7 @@ public class LoginAct extends BaseVolleyPost {
 
             BaseBean baseBean = com.alibaba.fastjson.JSONObject.parseObject(response, BaseBean.class);
 
-            if (baseBean.getCode().equals("1")) {
+            if (baseBean.getStatus()==Constant.SUCCESS_CODE) {
 
                 T.showShort(LoginAct.this, "登录成功");
                 intentUtils.openActivityFromRight(LoginAct.this, MainHomeAct.class);

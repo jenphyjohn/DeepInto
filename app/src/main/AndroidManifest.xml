@@ -6,10 +6,12 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
+        android:name=".app.MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -31,13 +33,13 @@
         <activity
             android:name=".ui.MainHomeAct"
             android:theme="@style/ActivityThemeCrossPublicMaterial" />
-        <!--登录-->
+        <!--商城登录-->
         <activity
-            android:name=".ui.login.LoginAct"
+            android:name=".ui.mall.login.LoginAct"
             android:theme="@style/ActivityThemeCrossPublicMaterial" />
-        <!--注册-->
+        <!--商城注册-->
         <activity
-            android:name=".ui.login.RegisterAct"
+            android:name=".ui.mall.register.RegisterAct"
             android:theme="@style/ActivityThemeCrossPublicMaterial" />
         <!--二维码扫描-->
         <activity

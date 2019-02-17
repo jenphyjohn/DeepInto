@@ -19,6 +19,9 @@ import com.mincat.sample.utils.L;
 import com.mincat.sample.utils.NetUtils;
 import com.mincat.sample.utils.VolleySingle;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author Michael
  * @描述 Volley 执行Post请求 当Activity仅需要Post请求时, 继承此类即可
@@ -64,6 +67,16 @@ public abstract class BaseVolleyPost extends BaseVolleyRequest implements Volley
                     requestListenerPost(sign, hasDialog),
                     errorListenerPost(sign, hasDialog)) {
 
+                /**
+                 * 后台使用Springmvc的关系 此处请求头必须这样设置
+                 */
+                @Override
+                public Map<String, String> getHeaders() throws AuthFailureError {
+                    Map<String, String> headers = new HashMap<String, String>();
+                    headers.put("Content-Type", "application/json;charset=utf-8");
+                    return headers;
+
+                }
 
                 @Override
                 public byte[] getBody() throws AuthFailureError {

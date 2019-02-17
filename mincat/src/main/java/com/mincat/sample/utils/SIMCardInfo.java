@@ -1,6 +1,9 @@
 package com.mincat.sample.utils;
 
+import android.Manifest;
 import android.content.Context;
+import android.content.pm.PackageManager;
+import android.support.v4.app.ActivityCompat;
 import android.telephony.TelephonyManager;
 
 /**
@@ -9,28 +12,28 @@ import android.telephony.TelephonyManager;
  */
 public final class SIMCardInfo {
 
-	public static final String TAG = "SIMCardInfo";
-	private TelephonyManager telephonyManager;
+    public static final String TAG = "SIMCardInfo";
+    private static TelephonyManager telephonyManager;
 
-	private String IMSI;
+    private static String IMSI;
 
-	public SIMCardInfo(Context context) {
+//    public SIMCardInfo(Context context) {
+//
+//        telephonyManager = (TelephonyManager) context
+//                .getSystemService(Context.TELEPHONY_SERVICE);
+//    }
+//
+//    // 获取手机的本机号码
+//    public String getNativePhoneNumber() {
+//        String NativePhoneNumber = null;
+//
+//        NativePhoneNumber = telephonyManager.getLine1Number();
+//
+//        return NativePhoneNumber;
+//    }
 
-		telephonyManager = (TelephonyManager) context
-				.getSystemService(Context.TELEPHONY_SERVICE);
-	}
-
-	// 获取手机的本机号码
-	public String getNativePhoneNumber() {
-		String NativePhoneNumber = null;
-
-		NativePhoneNumber = telephonyManager.getLine1Number();
-
-		return NativePhoneNumber;
-	}
-
-	// 获取手机运营商信息
-	public String getProvidersName() {
+    // 获取手机运营商信息
+    public String getProvidersName() {
 //		String ProvidersName = null;
 //		// 返回唯一的用户ID;就是这张卡的编号神马的
 //		IMSI = telephonyManager.getSubscriberId();
@@ -45,6 +48,27 @@ public final class SIMCardInfo {
 //			ProvidersName = "中国电信";
 //		}
 //		return ProvidersName;
-		return null;
-	}
+        return null;
+    }
+
+    // 获取手机运营商信息
+    public static String getDeviceId(Context context) {
+        String ProvidersName = null;
+        // 返回唯一的用户ID;就是这张卡的编号神马的
+        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+
+            IMSI = telephonyManager.getSubscriberId();
+            System.out.println(IMSI);
+            return IMSI;
+        }
+
+        return null;
+    }
 }
